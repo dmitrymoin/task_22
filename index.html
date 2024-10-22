@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .btn {
+      margin-bottom: 15px;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background-color: #218838;
+    }
+
+    .btn_text {
+      margin-right: 10px;
+      font-size: 20px;
+    }
+
+    .btn_icon {
+      width: 25px;
+      height: 25px;
+    }
+
+    .icon-1,
+    .icon-2 {
+      width: 100%;
+      height: 100%;
+    }
+
+    .icon-2 {
+      display: none;
+    }
+
+    p {
+      font-size: 20px;
+    }
+
+    .exe5-container {
+      background-color: #28a745;
+      width: 500px;
+      padding: 15px;
+    }
+
+    .input-container {
+      display: flex;
+      justify-content: space-between;
+      height: 30px;
+    }
+
+    .exe5-btn-container {
+      display: flex;
+    }
+
+    .btn-send {
+      margin-right: 5px;
+    }
+
+    #message-input {
+      width: 50%;
+    }
+
+    #output {
+      margin-top: 20px;
+    }
+
+    .message {
+      padding: 5px;
+      margin: 5px 0;
+      border-radius: 5px;
+      background-color: #218838;
+      color: white;
+    }
+
+    .message.user {
+      text-align: right;
+      margin-left: auto;
+      width: fit-content;
+    }
+
+    .message.server {
+      text-align: left;
+      margin-right: auto;
+      width: fit-content;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h3>Задание 1.</h3>
+
+  <!-- Россия -->
+  <svg width="180" height="120">
+    <rect width="180" height="40" y="0" fill="white" />
+    <rect width="180" height="40" y="40" fill="mediumBlue" />
+    <rect width="180" height="40" y="80" fill="red" />
+    <rect width="180" height="120" fill="none" stroke="black" stroke-width="2" />
+  </svg>
+
+  <!-- Франция -->
+  <svg width="180" height="120">
+    <rect width="60" height="120" x="0" fill="mediumBlue" />
+    <rect width="60" height="120" x="60" fill="white" />
+    <rect width="60" height="120" x="120" fill="red" />
+    <rect width="180" height="120" fill="none" stroke="black" stroke-width="2" />
+  </svg>
+
+  <!-- Финляндия -->
+  <svg width="180" height="120">
+    <rect width="180" height="50" y="0" fill="white" />
+    <rect width="180" height="20" y="50" fill="mediumBlue" />
+    <rect width="180" height="50" y="70" fill="white" />
+    <rect width="20" height="120" x="50" fill="mediumBlue" />
+    <rect width="180" height="120" fill="none" stroke="black" stroke-width="2" />
+  </svg>
+
+  <!-- Швейцария -->
+  <svg width="180" height="120">
+    <rect width="180" height="120" y="0" fill="red" />
+    <rect width="24" height="80" x="78" y="20" fill="white" />
+    <rect width="80" height="24" x="50" y="48" fill="white" />
+    <rect width="180" height="120" fill="none" stroke="black" stroke-width="2" />
+  </svg>
+
+  <!-- Япония -->
+  <svg width="180" height="120">
+    <rect width="180" height="120" y="0" fill="white" />
+    <circle cx="90" cy="60" r="35" fill="red" />
+    <rect width="180" height="120" fill="none" stroke="black" stroke-width="2" />
+  </svg>
+
+  <br>
+
+
+
+  <h3>Задание 2.</h3>
+
+  <button class="btn btn-exercise2">
+    <div class="btn_text">Click for new icon</div>
+    <div class="btn_icon">
+      <svg class="icon-1" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+        class="bi bi-arrow-down-left-circle" viewBox="0 0 16 16">
+        <path fill-rule="evenodd"
+          d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-5.904-2.854a.5.5 0 1 1 .707.708L6.707 9.95h2.768a.5.5 0 1 1 0 1H5.5a.5.5 0 0 1-.5-.5V6.475a.5.5 0 1 1 1 0v2.768z" />
+      </svg>
+
+      <svg class="icon-2" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+        class="bi bi-arrow-down-left-circle-fill" viewBox="0 0 16 16">
+        <path
+          d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0m-5.904-2.803a.5.5 0 1 1 .707.707L6.707 10h2.768a.5.5 0 0 1 0 1H5.5a.5.5 0 0 1-.5-.5V6.525a.5.5 0 0 1 1 0v2.768z" />
+      </svg>
+    </div>
+  </button>
+
+  <script>
+    document.querySelector('.btn-exercise2').addEventListener('click', () => {
+      const icon_1 = document.querySelector('.icon-1');
+      const icon_2 = document.querySelector('.icon-2');
+
+      if (icon_1.style.display === 'none') {
+        icon_1.style.display = 'inline';
+        icon_2.style.display = 'none';
+      } else {
+        icon_1.style.display = 'none';
+        icon_2.style.display = 'inline';
+      }
+    });
+  </script>
+
+
+
+  <h3>Задание 3.</h3>
+
+  <button class="btn btn-exercise3">
+    <div class="btn_text">Get screen size & geolocation</div>
+  </button>
+  <p class="screen-size"></p>
+  <p class="status-exercise3"></p>
+
+  <script>
+    const btnExercise3 = document.querySelector('.btn-exercise3');
+    const statusExercise3 = document.querySelector('.status-exercise3');
+    const screenSize = document.querySelector('.screen-size');
+
+    // Функция, выводящая текст об ошибке
+    const error3 = () => {
+      statusExercise3.textContent = 'Информация о местоположении недоступна';
+    }
+
+    // Функция, срабатывающая при успешном получении геолокации
+    const success3 = (position) => {
+      const latitude = position.coords.latitude;
+      const longitude = position.coords.longitude;
+
+      statusExercise3.textContent = `Широта: ${latitude} °, Долгота: ${longitude} °`;
+    }
+
+    const displaySize = () => {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      screenSize.textContent = `Размеры экрана: Ширина - ${width}px, Высота - ${height}px`;
+    }
+
+    btnExercise3.addEventListener('click', () => {
+      displaySize();
+
+      if (!navigator.geolocation) {
+        statusExercise3.textContent = 'Geolocation API не поддерживается вашим браузером';
+      } else {
+        statusExercise3.textContent = 'Определение местоположения…';
+        navigator.geolocation.getCurrentPosition(success3, error3);
+      }
+    });
+  </script>
+
+
+
+  <h3>Задание 4.</h3>
+
+  <button class="btn btn-exercise4">
+    <div class="btn_text">Get time zone, date & time</div>
+  </button>
+  <p class="status-exercise4"></p>
+
+  <script>
+    const btnExercise4 = document.querySelector('.btn-exercise4');
+    const statusExercise4 = document.querySelector('.status-exercise4');
+
+    // Функция, выводящая текст об ошибке
+    const error4 = () => {
+      statusExercise4.textContent = 'Информация о местоположении недоступна';
+    }
+
+    // Функция, срабатывающая при успешном получении геолокации
+    const success4 = (position) => {
+      const latitude = position.coords.latitude;
+      const longitude = position.coords.longitude;
+
+      // URL для запроса к Timezone API
+      const apiKey = '32bcd4a6e4b548968e7afcdb682ac679';
+      const url = `https://api.ipgeolocation.io/timezone?apiKey=${apiKey}&lat=${latitude}&long=${longitude}`;
+
+      // Отправка запроса
+      fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          const timezone = data.timezone;
+          const dateTime = data.date_time_txt;
+          statusExercise4.innerHTML = `Временная зона: ${timezone} <br> Местное дата и время: ${dateTime}`;
+        })
+        .catch(() => {
+          statusExercise4.textContent = 'Не удалось получить информацию о временной зоне';
+        });
+    }
+
+    btnExercise4.addEventListener('click', () => {
+      if (!navigator.geolocation) {
+        statusExercise4.textContent = 'Geolocation API не поддерживается вашим браузером';
+      } else {
+        statusExercise4.textContent = 'Определение местоположения…';
+        navigator.geolocation.getCurrentPosition(success4, error4);
+      }
+    });
+  </script>
+
+
+
+  <h3>Задание 5.</h3>
+
+  <div class="exe5-container">
+    <div class="input-container">
+      <input type="text" id="message-input" placeholder="Введите сообщение" />
+      <div class="exe5-btn-container">
+        <button class="btn-send">Отправить</button>
+        <button class="btn-geo">Гео-локация</button>
+      </div>
+    </div>
+    <div id="output"></div>
+  </div>
+
+  <script>
+    const serverUrl = "wss://echo-ws-service.herokuapp.com/";
+    const output = document.querySelector('#output');
+    const btnSend = document.querySelector('.btn-send');
+    const btnGeo = document.querySelector('.btn-geo');
+    const messageInput = document.querySelector('#message-input');
+
+    let websocket = new WebSocket(serverUrl);
+
+    // Функция для отображения сообщений в чате
+    function toScreen(message, className) {
+      let p = document.createElement("p");
+      p.innerHTML = message;
+      p.classList.add('message', className);
+      output.appendChild(p);
+    }
+
+    // Получение сообщения от сервера
+    websocket.onmessage = function (evt) {
+      if (evt.data.indexOf("Гео-локация:") !== 0) {
+        toScreen("Сервер: " + evt.data, "server");
+      }
+    };
+
+    // Отправка сообщения
+    btnSend.addEventListener('click', () => {
+      const message = messageInput.value;
+      if (message) {
+        toScreen("Пользователь: " + message, "user");
+        websocket.send(message);
+        messageInput.value = '';
+      }
+    });
+
+    // Отправка гео-локации
+    btnGeo.addEventListener('click', () => {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const latitude = position.coords.latitude;
+          const longitude = position.coords.longitude;
+          const geoLink = `https://www.openstreetmap.org/#map=18/${latitude}/${longitude}`;
+          toScreen(`<a href="${geoLink}" target="_blank" style="text-decoration: none">Гео-локация</a>`, "user");
+          // Отправка гео-локации на сервер
+          websocket.send(`Гео-локация: ${latitude}, ${longitude}`);
+        },
+      );
+    });
+  </script>
+
+</body>
+
+</html>
